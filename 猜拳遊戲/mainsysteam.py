@@ -48,7 +48,7 @@ def paper():
 def display_player():
     """ 展示玩家出的拳 """
 
-    txt_player.config(text=f'你:{player}',font=('標楷體',35,'bold'))
+    txt_player.config(text=f'玩家:{player}',font=('標楷體',35,'bold'))
 
 def judge():
     """ 判斷勝負 """
@@ -80,6 +80,7 @@ def display_victory():
     """ 展示勝負 """
 
     txt_judge.config(text=victory,font=('標楷體',40,'bold'))
+    txt_judge.place(x=275,y=150)
 
 def comply():
     """ 運行遊戲邏輯 """
@@ -100,20 +101,20 @@ victory=None                                 #勝負結果
 window=Tk()                     #視窗本體
 window.title('猜拳遊戲')        #視窗標題
 window.geometry('720x520')      #視窗大小
-window.config(bg='#00aa00')     #視窗背景顏色
+window.config(bg='#000000')     #視窗背景顏色
 
-txt_AI=Label(window,text='',bg='#00aa00',fg='#0000ff',font=('標楷體',30,'bold'))                    #AI文字(放AI出拳的文字)
-txt_AI.pack(side='top')                                                                             #AI文字布局
-txt_judge=Label(window,text='按下按鈕來猜拳!',bg='#00aa00',fg='#ff0000',font=('標楷體',30,'bold'))  #勝負文字(放初始訊息與輸贏的文字)
-txt_judge.pack(side='top')                                                                          #勝負文字布局
-txt_player=Label(window,text='',bg='#00aa00',fg='#0000ff',font=('標楷體',30,'bold'))                #玩家文字(放玩家出拳的文字)
-txt_player.pack(side='top')                                                                         #玩家文字布局
+txt_AI=Label(window,text='',bg='#000000',fg='#00ff00',font=('標楷體',30,'bold'))                    #AI文字(放AI出拳的文字)
+txt_AI.place(x=275,y=0)                                                                             #AI文字布局
+txt_judge=Label(window,text='按下按鈕來猜拳!',bg='#000000',fg='#ff0000',font=('標楷體',30,'bold'))  #勝負文字(放初始訊息與輸贏的文字)
+txt_judge.place(x=235,y=150)                                                                        #勝負文字布局
+txt_player=Label(window,text='',bg='#000000',fg='#00ff00',font=('標楷體',30,'bold'))                #玩家文字(放玩家出拳的文字)
+txt_player.place(x=275,y=300)                                                                       #玩家文字布局
 
-options1=Button(window,text='剪刀',bg='#00ffff',fg='#000000',font=('標楷體',30,'bold'),command=scissors)   #剪刀按鈕
-options1.pack(side='bottom')                                                                               #剪刀按鈕布局
-options2=Button(window,text='石頭',bg='#00ffff',fg='#000000',font=('標楷體',30,'bold'),command=stone)      #石頭按鈕
-options2.pack(side='bottom')                                                                               #石頭按鈕布局
-options3=Button(window,text='布',bg='#00ffff',fg='#000000',font=('標楷體',30,'bold'),command=paper)        #布按鈕
-options3.pack(side='bottom')                                                                               #布按鈕布局
+options1=Button(window,text='剪刀',bg='#00ffff',fg='#000000',font=('標楷體',30,'bold'),command=scissors)    #剪刀按鈕
+options1.place(x=185,y=400)                                                                                 #剪刀按鈕布局
+options2=Button(window,text='石頭',bg='#00ffff',fg='#000000',font=('標楷體',30,'bold'),command=stone)       #石頭按鈕
+options2.place(x=300,y=400)                                                                                 #石頭按鈕布局
+options3=Button(window,text='布',bg='#00ffff',fg='#000000',font=('標楷體',30,'bold'),command=paper)         #布按鈕
+options3.place(x=415,y=400)                                                                                 #布按鈕布局
 
 window.mainloop()
