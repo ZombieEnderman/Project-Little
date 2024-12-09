@@ -5,6 +5,7 @@
 
 # 模組區
 from tkinter import *
+import rocyear
 
 # 系統區
 window=Tk()                             #視窗本體
