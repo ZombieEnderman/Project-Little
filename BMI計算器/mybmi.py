@@ -15,11 +15,11 @@ bmi_norm={'BMI < 18.5':'過輕',
           '35 <= BMI':'重度肥胖'}
 
 
-def bmi_compute(kg,m):
+def bmi_compute(kg,cm):
     """ 計算BMI """
 
     body_weight=kg
-    body_height=m ** 2
+    body_height=(cm / 100) ** 2
     bmi=body_weight / body_height
     return bmi
 
