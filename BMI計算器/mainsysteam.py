@@ -5,7 +5,7 @@
 
 # 模組區
 from tkinter import *
-
+import mybmi
 
 def clearall():
     """ 清除所有輸入框的內容 """
@@ -19,6 +19,14 @@ def calculate_value():
 
     height=float(height_box.get())
     weight=float(weight_box.get())
+    bmi=round(mybmi.bmi_compute(weight,height),2)
+    display(bmi)
+
+
+def display(x):
+    """ 顯示結果至畫面上 """
+
+    result_txt.config(text=x)
 
 
 # 系統區
