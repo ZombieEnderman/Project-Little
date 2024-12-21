@@ -42,13 +42,13 @@ def calculate_time(second):
 
     global time
     if second >= 3_600:
-        hour = second // 3_600
-        minute = (second % 3_600) // 60
+        hour = int(second // 3_600)
+        minute = int((second % 3_600) // 60)
         second %= 60
-        time = (hour,minute,second)
+        time = (hour,minute,round(second,2))
     elif 60 <= second < 3_600:
-        minute = second // 60
+        minute = int(second // 60)
         second %= 60
-        time = (0,minute,second)
+        time = (0,minute,round(second,2))
     else:
-        time = (0,0,second)
+        time = (0,0,round(second,2))
