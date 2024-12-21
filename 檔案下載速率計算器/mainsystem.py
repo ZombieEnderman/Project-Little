@@ -43,6 +43,8 @@ window.config(bg='#ffffff')           #背景顏色
 # 容器區
 capacity_tuple = tuple(z for z in csize.capacity)           #檔案大小元組
 transmission_tuple = tuple(z for z in csize.transmission)   #傳輸速率元組
+x = IntVar()                                                #整數物件1
+y = IntVar()                                                #整數物件2
 
 # 文字標籤區
 input_txt1 = Label(window, text='檔案大小', bg='#ffffff', fg='#000000', font=('標楷體', 20, 'bold'))         #檔案標籤
@@ -60,11 +62,11 @@ box2.place(x=270,y=300)                                                         
 
 # 單選鈕區
 for z in range(len(capacity_tuple)):        #檔案選擇鈕
-    capacity = Radiobutton(window, text=capacity_tuple[z], bg='#ffffff', variable=IntVar(), value=z)
+    capacity = Radiobutton(window, text=capacity_tuple[z], bg='#ffffff', variable=x, value=z)
     capacity.place(x=260+(z*45), y=230)
 
 for z in range(len(transmission_tuple)):    #速率選擇鈕
-    transmission = Radiobutton(window, text=transmission_tuple[z], bg='#ffffff', variable=IntVar(), value=z)
+    transmission = Radiobutton(window, text=transmission_tuple[z], bg='#ffffff', variable=y, value=z)
     transmission.place(x=190+(z*55), y=350)
 
 # 按鈕區
